@@ -34,4 +34,10 @@ Para iniciar a instalação do backend após clonar o projeto entre na pasta pel
 >
 > Após execução do comando acima a api estara disponivel : http://localhost: " _A PORTA QUE COLOCAR NO ARQUIVO ENV_ "
 
+> :exclamation: **Caso queira zera o banco de dados durante o desenvolvimento utilize o comando:**
+>
+> ```
+> npx prisma migrate reset
+> ```
+
 #### **👨🏻‍💻 Desenvolvido 💙 [Luis Evandro](https://github.com/LuisEvandro)**

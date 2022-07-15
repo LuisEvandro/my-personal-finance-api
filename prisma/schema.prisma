@@ -11,11 +11,22 @@ datasource db {
 }
 
 model Users {
-  id        BigInt   @id @unique @default(autoincrement())
+  id        Int      @id @unique @default(autoincrement())
   name      String   @db.VarChar(200)
   email     String   @unique @db.VarChar(200)
   password  String   @db.LongText
   createdAt DateTime @default(now())
 
+  UsersToken UsersToken[]
   @@map("users")
+}
+
+model UsersToken {
+  id        Int      @id @unique @default(autoincrement())
+  user      Users    @relation(fields: [userId], references: [id])
+  userId    Int
+  token     String   @db.LongText
+  createdAt DateTime @default(now())
+
+  @@map("users_token")
 }
